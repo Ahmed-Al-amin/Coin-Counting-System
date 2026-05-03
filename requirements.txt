@@ -1,0 +1,27 @@
+# Coin Counting System - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core computer vision
+opencv-python
+
+# Numerical computing
+numpy
+
+# Visualization and plotting
+matplotlib
+
+# Scientific computing (for potential advanced features)
+scipy
+
+# YAML configuration parsing
+pyyaml
+
+# Testing framework
+pytest
+pytest-cov
+
+# Logging (optional, for better debug output)
+loguru
+
+# Image processing utilities
+pillow

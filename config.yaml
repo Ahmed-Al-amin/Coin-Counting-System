@@ -1,0 +1,70 @@
+# ============================================================================
+# Coin Counting System - Configuration File
+# Adjust these parameters based on your camera setup and lighting conditions
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Phase 1: Image Preprocessing
+# ----------------------------------------------------------------------------
+preprocessing:
+  max_working_dim: 1024          # Resize longest side to this many pixels
+  clahe_clip_limit: 2.0          # Contrast enhancement strength (1.0-4.0)
+  clahe_tile_size: [8, 8]        # Grid size for local histogram equalization
+  blur_kernel: [5, 5]            # Gaussian blur kernel (must be odd numbers)
+  blur_sigma: 1.5                # Gaussian standard deviation
+  canny_low_ratio: 0.5           # Canny low = Otsu * this ratio
+  canny_high_ratio: 1.0          # Canny high = Otsu * this ratio
+
+# ----------------------------------------------------------------------------
+# Phase 2: Circular Hough Transform Detection
+# ----------------------------------------------------------------------------
+detection:
+  dp: 1.2                        # Accumulator resolution ratio (1.0-2.0)
+  min_dist: 30                   # Minimum center-to-center distance (pixels)
+  param1: 80                     # Internal Canny high threshold
+  param2: 30                     # Accumulator threshold (lower = more circles)
+  min_radius: 15                 # Minimum coin radius (pixels)
+  max_radius: 200                # Maximum coin radius (pixels)
+  nms_iou_threshold: 0.3         # Overlap threshold for non-maximum suppression
+  boundary_margin: 0.5           # Fraction of radius for boundary filtering
+
+# ----------------------------------------------------------------------------
+# Phase 3: Coin Segmentation
+# ----------------------------------------------------------------------------
+segmentation:
+  target_size: 128               # Normalized coin image size (pixels)
+  padding_ratio: 0.05            # ROI padding as fraction of radius
+  mask_erosion_px: 2             # Erode circular mask by this many pixels
+
+# ----------------------------------------------------------------------------
+# Phase 4: Feature Extraction
+# ----------------------------------------------------------------------------
+features:
+  size_thresholds:
+    tiny: 0.025                  # < 2.5% of image diagonal
+    small: 0.040                 # 2.5-4.0%
+    medium: 0.055                # 4.0-5.5%
+    large: 0.070                 # 5.5-7.0%
+  bicolor_hue_std_thresh: 22     # Hue std above this = bicolor coin
+  hue_hist_bins: 18              # Number of bins for hue histogram
+
+# ----------------------------------------------------------------------------
+# Phase 5: Classification & Counting
+# ----------------------------------------------------------------------------
+classification:
+  size_splits:
+    copper_1c_2c: 0.022          # rel_size threshold between 1c and 2c
+    copper_2c_5c: 0.032          # rel_size threshold between 2c and 5c
+    gold_10c_20c: 0.030          # rel_size threshold between 10c and 20c
+    gold_20c_50c: 0.038          # rel_size threshold between 20c and 50c
+    bicolor_1e_2e: 0.043         # rel_size threshold between €1 and €2
+  low_confidence_threshold: 0.50 # Flag coins below this confidence
+
+# ----------------------------------------------------------------------------
+# Phase 6: Output & Visualization
+# ----------------------------------------------------------------------------
+output:
+  output_dir: outputs
+  generate_html: true            # Generate HTML report
+  annotate_confidence_bar: true  # Draw confidence bars under coins
+  banner_height_px: 60           # Height of summary banner
