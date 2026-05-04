@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!#/usr/bin/env python3
 """
 Coin Counting System - Main Entry Point
 Usage: python main.py --image path/to/coins.jpg [--debug] [--config config.yaml]
