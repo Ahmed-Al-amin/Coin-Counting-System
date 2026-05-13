@@ -59,7 +59,7 @@ class Preprocessor:
         edges = np.uint8(edges)
         
         # Apply softer binary threshold
-        _, edges_binary = cv2.threshold(edges, 30, 255, cv2.THRESH_BINARY)
+        _, edges_binary = cv2.threshold(edges, 50, 255, cv2.THRESH_BINARY)
         return edges_binary
 
     def normalize_scale(self, image: np.ndarray) -> np.ndarray:

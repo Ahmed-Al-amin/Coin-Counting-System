@@ -1,32 +1,23 @@
-# ============================================================================
-# Coin Counting System - Configuration File
-# Adjust these parameters based on your camera setup and lighting conditions
-# ============================================================================
-
-# ----------------------------------------------------------------------------
-# Phase 1: Image Preprocessing
-# ----------------------------------------------------------------------------
 preprocessing:
   max_working_dim: 1024          # Resize longest side to this many pixels
   clahe_clip_limit: 2.0          # Contrast enhancement strength (1.0-4.0)
   clahe_tile_size: [8, 8]        # Grid size for local histogram equalization
-  blur_kernel: [5, 5]            # Gaussian blur kernel (must be odd numbers)
-  blur_sigma: 1.5                # Gaussian standard deviation
-  canny_low_ratio: 0.5           # Canny low = Otsu * this ratio
-  canny_high_ratio: 1.0          # Canny high = Otsu * this ratio
+  bilateral_d: 11              # Increased from 9 to smooth texture more
+  bilateral_sigma_color: 120   # Increased to ignore background color variations
+  bilateral_sigma_space: 120
 
 # ----------------------------------------------------------------------------
 # Phase 2: Circular Hough Transform Detection
 # ----------------------------------------------------------------------------
 detection:
   dp: 1.2                        # Accumulator resolution ratio (1.0-2.0)
-  min_dist: 80                   # Minimum center-to-center distance (pixels)
-  param1: 120                    # Internal Canny high threshold
-  param2: 60                     # Accumulator threshold (lower = more circles)
-  min_radius: 15                 # Minimum coin radius (pixels)
-  max_radius: 200                # Maximum coin radius (pixels)
-  nms_iou_threshold: 0.6         # Overlap threshold for non-maximum suppression
-  boundary_margin: 0.5           # Fraction of radius for boundary filtering
+  min_dist: 100                # Increased to prevent double detections
+  param1: 100                  
+  param2: 85                   # Increased (was 60). Higher means "be more certain it is a circle"
+  min_radius: 20
+  max_radius: 250
+  nms_iou_threshold: 0.4       # Lower means "remove overlaps more aggressively"
+  boundary_margin: 0.3
 
 # ----------------------------------------------------------------------------
 # Phase 3: Coin Segmentation

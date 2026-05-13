@@ -50,7 +50,7 @@ def test_nms_removes_duplicates(detector):
     from src.utils.geometry import nms_circles
     # Two nearly identical circles (same center, slightly diff radius)
     circles = [(100, 100, 40), (102, 101, 42), (300, 300, 40)]
-    kept = nms_circles(circles, iou_threshold=0.3)
+    kept = nms_circles(circles, threshold=0.3)
     assert len(kept) == 2, f"NMS should keep 2, got {len(kept)}"
 
 # TC-2.4: Circle overlap function — no overlap

@@ -7,13 +7,12 @@ from src.preprocessing import Preprocessor
 from src.utils.image_io import load_image
 
 CONFIG = {
-    'blur_kernel': [5, 5],
-    'blur_sigma': 1.5,
+    'bilateral_d': 9,
+    'bilateral_sigma_color': 75,
+    'bilateral_sigma_space': 75,
     'clahe_clip_limit': 2.0,
     'clahe_tile_size': [8, 8],
-    'max_working_dim': 1024,
-    'canny_low_ratio': 0.5,
-    'canny_high_ratio': 1.0
+    'max_working_dim': 1024
 }
 
 @pytest.fixture
@@ -40,29 +39,29 @@ def test_clahe_preserves_shape(preprocessor, sample_bgr):
     assert clahe.shape == gray.shape
     assert clahe.dtype == np.uint8
 
-# TC-1.3: Gaussian blur produces non-identical but same-shape output
-def test_blur_smooths_image(preprocessor, sample_bgr):
+# TC-1.3: Bilateral filter produces non-identical but same-shape output
+def test_bilateral_filter_smooths_image(preprocessor, sample_bgr):
     gray = preprocessor.to_grayscale(sample_bgr)
-    blurred = preprocessor.gaussian_blur(gray)
+    blurred = preprocessor.bilateral_filter(gray)
     assert blurred.shape == gray.shape
     assert not np.array_equal(blurred, gray), "Blur should change pixel values"
 
-# TC-1.4: Canny output is binary (0 or 255 only)
-def test_canny_is_binary(preprocessor, sample_bgr):
+# TC-1.4: Sobel magnitude output is binary (0 or 255 only)
+def test_sobel_is_binary(preprocessor, sample_bgr):
     gray = preprocessor.to_grayscale(sample_bgr)
-    blurred = preprocessor.gaussian_blur(gray)
-    edges = preprocessor.canny_edges(blurred)
+    blurred = preprocessor.bilateral_filter(gray)
+    edges = preprocessor.sobel_magnitude(blurred)
     unique_vals = np.unique(edges)
-    assert set(unique_vals).issubset({0, 255}), f"Canny has non-binary values: {unique_vals}"
+    assert set(unique_vals).issubset({0, 255}), f"Sobel has non-binary values: {unique_vals}"
 
-# TC-1.5: Canny detects edges on synthetic circle image
-def test_canny_detects_circle_edges(preprocessor, sample_bgr):
+# TC-1.5: Sobel magnitude detects edges on synthetic circle image
+def test_sobel_detects_circle_edges(preprocessor, sample_bgr):
     gray = preprocessor.to_grayscale(sample_bgr)
-    blurred = preprocessor.gaussian_blur(gray)
-    edges = preprocessor.canny_edges(blurred)
+    blurred = preprocessor.bilateral_filter(gray)
+    edges = preprocessor.sobel_magnitude(blurred)
     # Should have significant white pixels (circle boundary detected)
     white_pixel_ratio = np.sum(edges > 0) / edges.size
-    assert white_pixel_ratio > 0.01, "Canny found no edges on synthetic circle"
+    assert white_pixel_ratio > 0.01, "Sobel found no edges on synthetic circle"
     assert white_pixel_ratio < 0.30, "Too many edges — noise or wrong thresholds"
 
 # TC-1.6: Scale normalization respects max_dim

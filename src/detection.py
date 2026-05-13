@@ -56,18 +56,21 @@ class CoinDetector:
         return float(edge_strength)
 
     def validate_circle_position(self, c: Circle, edges: np.ndarray) -> bool:
-        """
-        Verify if a circle's ROI contains enough edge pixels to be a valid coin.
-        Prevents circles floating in uniform backgrounds.
-        """
         x, y, r = c
         h, w = edges.shape[:2]
         
-        x1, y1 = max(0, x - r), max(0, y - r)
-        x2, y2 = min(w, x + r), min(h, y + r)
+        # Create a thin ring mask at the circle's boundary
+        mask_ring = np.zeros((h, w), dtype=np.uint8)
+        cv2.circle(mask_ring, (x, y), r, 255, 3) # 3px thick ring
         
-        roi = edges[y1:y2, x1:x2]
-        return np.sum(roi > 0) > 30  
+        # Count how many edge pixels fall ON the circle's boundary
+        rim_edges = cv2.bitwise_and(edges, mask_ring)
+        edge_count = np.count_nonzero(rim_edges)
+        
+        # Mathematical perimeter is 2 * pi * r
+        # We require at least 35% of the perimeter to have strong edges
+        expected_perimeter = 2 * np.pi * r
+        return edge_count > (expected_perimeter * 0.35)
 
     def enforce_one_circle_per_coin(self, circles: List[Circle]) -> List[Circle]:
         """
@@ -153,7 +156,7 @@ class CoinDetector:
             # 2. Circularity Filter: 4 * pi * Area / Perimeter^2
             circularity = 4 * np.pi * area / (perimeter * perimeter)
             
-            if circularity > 0.7:
+            if circularity > 0.55: # Allows heptagonal/octagonal coins
                 (x, y), radius = cv2.minEnclosingCircle(cnt)
                 
                 # 3. Radius Consistency: Enclosing circle should match contour area density
@@ -292,7 +295,7 @@ class CoinDetector:
         # Post-processing
         if len(circles_list) > 0:
             # 1. NMS for overlap (Fix 3: Increased threshold)
-            nms_thresh = cfg.get('nms_iou_threshold', 0.7)
+            nms_thresh = cfg.get('nms_iou_threshold', 0.4)
             circles = nms_circles(circles_list, nms_thresh)
             
             # 2. Cluster circles by center and select best (centroid-based)
