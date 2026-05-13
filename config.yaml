@@ -44,8 +44,8 @@ features:
 # ----------------------------------------------------------------------------
 classification:
   size_thresholds:
-    small_medium: 0.035          # rel_size threshold between Small and Medium
-    medium_large: 0.055          # rel_size threshold between Medium and Large
+    small_medium: 0.055          # rel_size threshold between Small and Medium
+    medium_large: 0.075          # rel_size threshold between Medium and Large
   low_confidence_threshold: 0.30 # Flag detections below this confidence
 
 # ----------------------------------------------------------------------------
