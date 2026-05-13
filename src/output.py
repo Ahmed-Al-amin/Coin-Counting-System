@@ -58,9 +58,9 @@ class ResultExporter:
             
             (tw, th), baseline = cv2.getTextSize(label, font, font_scale, font_thick)
             
-            # Label position: centered above the circle
+            # Label position: centered inside the circle
             lx = x - tw // 2
-            ly = y - r - 8
+            ly = y + (th // 2)
             
             # Background rectangle for readability
             pad = 4
@@ -110,20 +110,20 @@ class ResultExporter:
         Draw a summary banner at the top of the annotated image.
         """
         h, w = annotated.shape[:2]
-        banner_h = 60
+        banner_h = 100
         
         # Create banner background
         banner = np.zeros((banner_h, w, 3), dtype=np.uint8)
-        banner[:] = (20, 20, 20)  # Dark background
+        banner[:] = (25, 25, 25)  # Dark background
         
         # Total count (large text)
         total_text = f"Total Coins: {summary['total_count']}"
-        cv2.putText(banner, total_text, (20, 40),
+        cv2.putText(banner, total_text, (20, 60),
                     cv2.FONT_HERSHEY_DUPLEX, 1.2, (0, 230, 100), 2, cv2.LINE_AA)
         
         # Breakdown
         breakdown_text = " | ".join([f"{b['category']}: {b['count']}" for b in summary['breakdown']])
-        cv2.putText(banner, breakdown_text, (w - 450, 40),
+        cv2.putText(banner, breakdown_text, (20, 90),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (180, 180, 180), 1, cv2.LINE_AA)
         
         return np.vstack([banner, annotated])
@@ -138,28 +138,28 @@ class ResultExporter:
         return out_path
 
     def print_table(self, phase5_result: dict) -> str:
-        """Print and return a formatted console summary table."""
+        """Print and return a formatted console schedule of detected coins."""
         summary = phase5_result['summary']
-        breakdown = summary['breakdown']
+        classified_coins = phase5_result['classified_coins']
         
         lines = []
         lines.append("\n" + "═" * 44)
-        lines.append("  🪙  GENERIC COIN COUNTING RESULTS")
+        lines.append(f"  TOTAL COINS: {summary['total_count']}")
         lines.append("═" * 44)
-        lines.append(f"  {'Category':<15} {'Count':>10} {'% of Total':>15}")
-        lines.append("─" * 44)
+        lines.append("\n  COIN SCHEDULE:")
+        lines.append(f"  {'Coin #':<10} {'Size':<15} {'Color':<15}")
+        lines.append("  " + "─" * 42)
         
-        total = summary['total_count']
-        for row in breakdown:
-            pct = (row['count'] / total * 100) if total > 0 else 0
-            lines.append(f"  {row['category']:<15} {row['count']:>10} {pct:>14.1f}%")
+        for coin in classified_coins:
+            if not coin.get('is_coin', True):
+                continue
+                
+            idx = coin['coin_index']
+            size = coin['category']
+            color = coin['color_group']
+            lines.append(f"  {idx:<10} {size:<15} {color:<15}")
         
-        lines.append("─" * 44)
-        lines.append(f"  {'TOTAL COINS':<15} {total:>10}")
-        lines.append("═" * 44)
-        lines.append(f"  Average confidence: {summary['avg_confidence']:.1%}")
-        if summary['low_confidence_count'] > 0:
-            lines.append(f"  ⚠️  Low-confidence/Noise: {summary['low_confidence_count']}")
+        lines.append("  " + "─" * 42)
         lines.append("")
         
         output = "\n".join(lines)

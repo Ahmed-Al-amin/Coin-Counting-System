@@ -46,7 +46,7 @@ classification:
   size_thresholds:
     small_medium: 0.035          # rel_size threshold between Small and Medium
     medium_large: 0.055          # rel_size threshold between Medium and Large
-  low_confidence_threshold: 0.50 # Flag detections below this confidence
+  low_confidence_threshold: 0.30 # Flag detections below this confidence
 
 # ----------------------------------------------------------------------------
 # Phase 6: Output & Visualization
@@ -54,4 +54,4 @@ classification:
 output:
   output_dir: outputs
   annotate_confidence_bar: true  # Draw confidence bars under coins
-  banner_height_px: 60           # Height of summary banner
+  banner_height_px: 100          # Height of summary banner
