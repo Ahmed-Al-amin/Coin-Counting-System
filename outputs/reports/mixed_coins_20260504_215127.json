@@ -1,0 +1,73 @@
+{
+  "run_id": "20260504_215127",
+  "source_image": "data/sample_images/mixed_coins.jpg",
+  "timestamp": "2026-05-04T21:51:27.825247",
+  "summary": {
+    "total_count": 4,
+    "category_counts": {
+      "Small": 0,
+      "Medium": 2,
+      "Large": 2
+    },
+    "avg_confidence": 0.8,
+    "low_confidence_count": 0
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 399,
+        "y": 400,
+        "r": 64
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 550,
+        "y": 149,
+        "r": 59
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 349,
+        "y": 149,
+        "r": 49
+      },
+      "reasoning": [
+        "Generic Medium coin detected"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 149,
+        "y": 150,
+        "r": 44
+      },
+      "reasoning": [
+        "Generic Medium coin detected"
+      ]
+    }
+  ]
+}

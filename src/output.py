@@ -1,7 +1,4 @@
 """Phase 6_output module - Coin Counting System."""
-# Full implementation should be added here based on phase_details.md
-# This is a placeholder - replace with actual code
-
 
 import cv2
 import numpy as np
@@ -21,12 +18,6 @@ COLORS = {
     'UNKNOWN': (0, 0, 255),      # Red for unknowns
 }
 
-LABEL_MAP = {
-    '1c':  '1¢',   '2c':  '2¢',   '5c':  '5¢',
-    '10c': '10¢',  '20c': '20¢',  '50c': '50¢',
-    '1e':  '€1',   '2e':  '€2',   'UNKNOWN': '?',
-}
-
 class ResultExporter:
     def __init__(self, config: dict, output_dir: str = "outputs"):
         self.config = config
@@ -37,16 +28,18 @@ class ResultExporter:
                           classified_coins: List[Dict]) -> np.ndarray:
         """
         Draw annotated overlays on image:
-        - Colored circle outline (color = coin denomination group)
-        - Label with denomination symbol (e.g., "€1") above coin
+        - Colored circle outline (color = coin color group)
+        - Label with size category (e.g., "Medium") above coin
         - Confidence bar below coin (green=high, red=low)
-        - Small center dot
         """
         annotated = image.copy()
         
         for coin in classified_coins:
+            if not coin.get('is_coin', True):
+                continue
+
             x, y, r = coin['circle']
-            den = coin['denomination']
+            cat = coin['category']
             conf = coin['confidence']
             cgroup = coin['color_group']
             
@@ -59,11 +52,11 @@ class ResultExporter:
             # Center dot
             cv2.circle(annotated, (x, y), 3, color, -1)
             
-            # Denomination label
-            label = LABEL_MAP.get(den, '?')
+            # Category label
+            label = cat
             font = cv2.FONT_HERSHEY_DUPLEX
-            font_scale = max(0.5, r / 60)
-            font_thick = max(1, int(r / 30))
+            font_scale = max(0.4, r / 80)
+            font_thick = max(1, int(r / 40))
             
             (tw, th), baseline = cv2.getTextSize(label, font, font_scale, font_thick)
             
@@ -90,7 +83,7 @@ class ResultExporter:
             cv2.rectangle(annotated, (bar_x, bar_y), 
                           (bar_x + bar_w, bar_y + bar_h), (40, 40, 40), -1)
             
-            # Filled portion (green -> yellow -> red by confidence)
+            # Filled portion
             fill_w = int(bar_w * conf)
             bar_color = self._confidence_color(conf)
             cv2.rectangle(annotated, (bar_x, bar_y),
@@ -125,20 +118,15 @@ class ResultExporter:
         banner = np.zeros((banner_h, w, 3), dtype=np.uint8)
         banner[:] = (20, 20, 20)  # Dark background
         
-        # Total value (large text)
-        total_text = f"Total: EUR {summary['total_eur']:.2f}"
+        # Total count (large text)
+        total_text = f"Total Coins: {summary['total_count']}"
         cv2.putText(banner, total_text, (20, 40),
                     cv2.FONT_HERSHEY_DUPLEX, 1.2, (0, 230, 100), 2, cv2.LINE_AA)
         
-        # Coin count
-        count_text = f"{summary['total_coins']} coins"
-        cv2.putText(banner, count_text, (w - 180, 40),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (180, 180, 180), 1, cv2.LINE_AA)
-        
-        # Avg confidence
-        conf_text = f"Avg conf: {summary['avg_confidence']:.0%}"
-        cv2.putText(banner, conf_text, (w - 350, 40),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (150, 150, 150), 1, cv2.LINE_AA)
+        # Breakdown
+        breakdown_text = " | ".join([f"{b['category']}: {b['count']}" for b in summary['breakdown']])
+        cv2.putText(banner, breakdown_text, (w - 450, 40),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (180, 180, 180), 1, cv2.LINE_AA)
         
         return np.vstack([banner, annotated])
 
@@ -153,7 +141,7 @@ class ResultExporter:
 
     def export_json(self, phase5_result: dict, 
                     source_path: str) -> str:
-        """Export full results to JSON for programmatic use."""
+        """Export full results to JSON."""
         results = {
             "run_id":       self.run_id,
             "source_image": str(source_path),
@@ -162,8 +150,8 @@ class ResultExporter:
             "coins": [
                 {
                     "coin_index":   c['coin_index'],
-                    "denomination": c['denomination'],
-                    "value_eur":    c['value_eur'],
+                    "category":     c['category'],
+                    "is_coin":      c['is_coin'],
                     "confidence":   round(c['confidence'], 4),
                     "color_group":  c['color_group'],
                     "circle": {
@@ -192,27 +180,23 @@ class ResultExporter:
         breakdown = summary['breakdown']
         
         lines = []
-        lines.append("\n" + "═" * 54)
-        lines.append("  💰  COIN COUNTING RESULTS")
-        lines.append("═" * 54)
-        lines.append(f"  {'Denomination':<14} {'Count':>6} {'Unit':>8} {'Subtotal':>10}")
-        lines.append("─" * 54)
+        lines.append("\n" + "═" * 44)
+        lines.append("  🪙  GENERIC COIN COUNTING RESULTS")
+        lines.append("═" * 44)
+        lines.append(f"  {'Category':<15} {'Count':>10} {'% of Total':>15}")
+        lines.append("─" * 44)
         
+        total = summary['total_count']
         for row in breakdown:
-            den_sym = LABEL_MAP.get(row['denomination'], row['denomination'])
-            count = row['count']
-            unit_val = f"€{row['unit_value']:.2f}"
-            subtotal = f"€{row['subtotal_eur']:.2f}"
-            lines.append(f"  {den_sym:<14} {count:>6} {unit_val:>8} {subtotal:>10}")
+            pct = (row['count'] / total * 100) if total > 0 else 0
+            lines.append(f"  {row['category']:<15} {row['count']:>10} {pct:>14.1f}%")
         
-        lines.append("─" * 54)
-        lines.append(f"  {'TOTAL':<14} {summary['total_coins']:>6} {'':>8} "
-                     f"€{summary['total_eur']:.2f}".rjust(10))
-        lines.append("═" * 54)
+        lines.append("─" * 44)
+        lines.append(f"  {'TOTAL COINS':<15} {total:>10}")
+        lines.append("═" * 44)
         lines.append(f"  Average confidence: {summary['avg_confidence']:.1%}")
         if summary['low_confidence_count'] > 0:
-            lines.append(f"  ⚠️  Low-confidence detections: "
-                         f"{summary['low_confidence_count']}")
+            lines.append(f"  ⚠️  Low-confidence/Noise: {summary['low_confidence_count']}")
         lines.append("")
         
         output = "\n".join(lines)
@@ -222,7 +206,7 @@ class ResultExporter:
     def generate_html_report(self, phase5_result: dict,
                               annotated_path: str,
                               source_path: str) -> str:
-        """Generate a self-contained HTML report with embedded image."""
+        """Generate a self-contained HTML report."""
         summary = phase5_result['summary']
         coins = phase5_result['classified_coins']
         
@@ -231,15 +215,15 @@ class ResultExporter:
         
         rows = ""
         for coin in coins:
-            den = LABEL_MAP.get(coin['denomination'], '?')
+            status = "COIN" if coin['is_coin'] else "NOISE"
             conf = f"{coin['confidence']:.0%}"
             conf_color = '#2ecc71' if coin['confidence'] >= 0.75 else \
                          '#f39c12' if coin['confidence'] >= 0.50 else '#e74c3c'
             rows += f"""
             <tr>
               <td>{coin['coin_index']}</td>
-              <td><strong>{den}</strong></td>
-              <td>€{coin['value_eur']:.2f}</td>
+              <td><strong>{coin['category']}</strong></td>
+              <td>{status}</td>
               <td style="color:{conf_color}; font-weight:bold">{conf}</td>
               <td>{coin['color_group']}</td>
               <td><small>{'; '.join(coin['reasoning'])}</small></td>
@@ -265,16 +249,12 @@ class ResultExporter:
   </style>
 </head>
 <body>
-  <h1>🪙 Coin Counting Report</h1>
+  <h1>🪙 Generic Coin Counting Report</h1>
   <p style="text-align:center;color:#aaa">Source: {Path(source_path).name} | Run: {self.run_id}</p>
   <div class="summary">
     <div class="card">
-      <div class="value">€{summary['total_eur']:.2f}</div>
-      <div class="label">Total Value</div>
-    </div>
-    <div class="card">
-      <div class="value">{summary['total_coins']}</div>
-      <div class="label">Coins Detected</div>
+      <div class="value">{summary['total_count']}</div>
+      <div class="label">Total Coins</div>
     </div>
     <div class="card">
       <div class="value">{summary['avg_confidence']:.0%}</div>
@@ -282,9 +262,9 @@ class ResultExporter:
     </div>
   </div>
   <img src="data:image/png;base64,{img_b64}" alt="Annotated coin image">
-  <h2>Per-Coin Results</h2>
+  <h2>Per-Detection Results</h2>
   <table>
-    <tr><th>#</th><th>Denomination</th><th>Value</th><th>Confidence</th><th>Color Group</th><th>Reasoning</th></tr>
+    <tr><th>#</th><th>Category</th><th>Status</th><th>Confidence</th><th>Color Group</th><th>Reasoning</th></tr>
     {rows}
   </table>
 </body>

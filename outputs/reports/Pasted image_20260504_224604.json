@@ -1,0 +1,144 @@
+{
+  "run_id": "20260504_224604",
+  "source_image": "data/sample_images/Pasted image.png",
+  "timestamp": "2026-05-04T22:46:04.202662",
+  "summary": {
+    "total_count": 0,
+    "category_counts": {
+      "Small": 0,
+      "Medium": 0,
+      "Large": 0
+    },
+    "avg_confidence": 0.0,
+    "low_confidence_count": 0,
+    "rejected_count": 9
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 130,
+        "y": 159,
+        "r": 34
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 161,
+        "y": 94,
+        "r": 31
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 95,
+        "y": 95,
+        "r": 30
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 227,
+        "y": 94,
+        "r": 30
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 200,
+        "y": 158,
+        "r": 29
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 5,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 127,
+        "y": 36,
+        "r": 29
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 6,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 58,
+        "y": 160,
+        "r": 28
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 7,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 60,
+        "y": 39,
+        "r": 22
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 8,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 195,
+        "y": 39,
+        "r": 19
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    }
+  ]
+}

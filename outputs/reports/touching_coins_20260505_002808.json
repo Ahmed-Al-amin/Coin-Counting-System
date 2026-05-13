@@ -1,0 +1,46 @@
+{
+  "run_id": "20260505_002808",
+  "source_image": "data/sample_images/touching_coins.jpg",
+  "timestamp": "2026-05-05T00:28:08.815694",
+  "summary": {
+    "total_count": 1,
+    "category_counts": {
+      "Small": 0,
+      "Medium": 0,
+      "Large": 1
+    },
+    "avg_confidence": 0.8,
+    "low_confidence_count": 0,
+    "rejected_count": 1
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.3,
+      "circle": {
+        "x": 269,
+        "y": 250,
+        "r": 60
+      },
+      "reasoning": [
+        "Rejected: Extremely uniform color (not coin-like)"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 199,
+        "y": 250,
+        "r": 60
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    }
+  ]
+}

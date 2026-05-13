@@ -1,0 +1,47 @@
+{
+  "run_id": "20260505_013633",
+  "source_image": "data/sample_images/touching_coins.jpg",
+  "timestamp": "2026-05-05T01:36:33.088586",
+  "summary": {
+    "total_count": 1,
+    "total_detected": 1,
+    "breakdown": [
+      {
+        "category": "Small",
+        "count": 0
+      },
+      {
+        "category": "Medium",
+        "count": 0
+      },
+      {
+        "category": "Large",
+        "count": 1
+      }
+    ],
+    "category_counts": {
+      "Large": 1
+    },
+    "avg_confidence": 0.85,
+    "low_confidence_count": 0
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 234,
+        "y": 249,
+        "r": 95
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    }
+  ]
+}

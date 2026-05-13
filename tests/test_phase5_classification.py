@@ -1,17 +1,15 @@
 import pytest
 import numpy as np
-from src.classification import CoinClassifier, EURO_COINS
+from src.classification import CoinClassifier
 
 
 # ---------------- CONFIG ----------------
 CONFIG = {
-    'size_splits': {
-        'copper_1c_2c':  0.022,
-        'copper_2c_5c':  0.032,
-        'gold_10c_20c':  0.030,
-        'gold_20c_50c':  0.038,
-        'bicolor_1e_2e': 0.043,
-    }
+    'size_thresholds': {
+        'small_medium': 0.035,
+        'medium_large': 0.055,
+    },
+    'low_confidence_threshold': 0.50
 }
 
 
@@ -22,155 +20,78 @@ def classifier():
 
 
 # ---------------- HELPERS ----------------
-def make_features(color_group, rel_size, coin_index=0,
-                  sat_mean=100, lab_b_mean=145):
+def make_features(rel_size, color_group='COPPER', coin_index=0,
+                  sat_mean=100, hist_entropy=2.0, lab_L_mean=150):
     return {
         'coin_index': coin_index,
         'circle': (100, 100, 50),  # (x, y, radius)
         'color_group': color_group,
         'rel_size': rel_size,
-        'size_bin': 'medium',
         'sat_mean': sat_mean,
-        'lab_b_mean': lab_b_mean,
+        'hist_entropy': hist_entropy,
+        'lab_L_mean': lab_L_mean,
     }
 
 
 # ---------------- UNIT TESTS ----------------
 
-def test_classify_1c(classifier):
-    feat = make_features('COPPER', 0.018)
+def test_categorize_small(classifier):
+    feat = make_features(rel_size=0.02)
     res = classifier.classify_coin(feat)
+    assert res['category'] == 'Small'
 
-    assert res['denomination'] == '1c'
-    assert res['value_eur'] == 0.01
-
-
-def test_classify_2c(classifier):
-    feat = make_features('COPPER', 0.023)
+def test_categorize_medium(classifier):
+    feat = make_features(rel_size=0.04)
     res = classifier.classify_coin(feat)
+    assert res['category'] == 'Medium'
 
-    assert res['denomination'] == '2c'
-    assert res['value_eur'] == 0.02
-
-
-def test_classify_5c(classifier):
-    feat = make_features('COPPER', 0.036)
+def test_categorize_large(classifier):
+    feat = make_features(rel_size=0.06)
     res = classifier.classify_coin(feat)
+    assert res['category'] == 'Large'
 
-    assert res['denomination'] == '5c'
-    assert res['value_eur'] == 0.05
-
-
-def test_classify_10c(classifier):
-    feat = make_features('GOLD', 0.028)
+def test_validate_coin_success(classifier):
+    feat = make_features(rel_size=0.04, sat_mean=100, hist_entropy=2.5)
     res = classifier.classify_coin(feat)
+    assert res['is_coin'] is True
+    assert res['confidence'] > 0.6
 
-    assert res['denomination'] == '10c'
-    assert res['value_eur'] == 0.10
-
-
-def test_classify_20c(classifier):
-    feat = make_features('GOLD', 0.033)
+def test_validate_noise_low_sat(classifier):
+    # Very low saturation and low entropy should fail
+    feat = make_features(rel_size=0.04, sat_mean=10, hist_entropy=0.2, color_group='UNKNOWN')
     res = classifier.classify_coin(feat)
-
-    assert res['denomination'] == '20c'
-    assert res['value_eur'] == 0.20
-
-
-def test_classify_50c(classifier):
-    feat = make_features('GOLD', 0.045)
-    res = classifier.classify_coin(feat)
-
-    assert res['denomination'] == '50c'
-    assert res['value_eur'] == 0.50
-
-
-def test_classify_1e(classifier):
-    feat = make_features('BICOLOR', 0.040)
-    res = classifier.classify_coin(feat)
-
-    assert res['denomination'] == '1e'
-    assert res['value_eur'] == 1.00
-
-
-def test_classify_2e(classifier):
-    feat = make_features('BICOLOR', 0.050)
-    res = classifier.classify_coin(feat)
-
-    assert res['denomination'] == '2e'
-    assert res['value_eur'] == 2.00
-
-
-def test_unknown_color(classifier):
-    feat = make_features('SILVER', 0.03)
-    res = classifier.classify_coin(feat)
-
-    assert res['denomination'] == 'UNKNOWN'
+    assert res['is_coin'] is False
     assert res['confidence'] < 0.5
 
-
-def test_confidence_bounds(classifier):
-    feat = make_features('COPPER', 0.03)
+def test_validate_silver_coin(classifier):
+    feat = make_features(rel_size=0.04, color_group='SILVER', sat_mean=20, lab_L_mean=200, hist_entropy=2.0)
     res = classifier.classify_coin(feat)
+    assert res['is_coin'] is True
 
-    assert 0.0 <= res['confidence'] <= 1.0
-
-
-# ---------------- TOTAL TESTS ----------------
-
-def test_total_calculation(classifier):
+def test_summarize_results(classifier):
     coins = [
-        {'denomination': '10c', 'value_eur': 0.10, 'confidence': 0.8},
-        {'denomination': '10c', 'value_eur': 0.10, 'confidence': 0.8},
-        {'denomination': '10c', 'value_eur': 0.10, 'confidence': 0.8},
-        {'denomination': '50c', 'value_eur': 0.50, 'confidence': 0.8},
+        {'is_coin': True, 'category': 'Small', 'confidence': 0.8},
+        {'is_coin': True, 'category': 'Small', 'confidence': 0.9},
+        {'is_coin': True, 'category': 'Medium', 'confidence': 0.7},
+        {'is_coin': False, 'category': 'Large', 'confidence': 0.3},
     ]
+    summary = classifier.summarize_results(coins)
+    assert summary['total_count'] == 3
+    assert summary['total_detected'] == 4
+    assert summary['category_counts']['Small'] == 2
+    assert summary['category_counts']['Medium'] == 1
+    assert 'Large' not in summary['category_counts'] or summary['category_counts']['Large'] == 0
 
-    summary = classifier.count_and_total(coins)
-
-    assert summary['total_coins'] == 4
-    assert abs(summary['total_eur'] - 0.80) < 0.001
-
-
-def test_denomination_counts(classifier):
-    coins = [
-        {'denomination': '1c', 'value_eur': 0.01, 'confidence': 0.8},
-        {'denomination': '1c', 'value_eur': 0.01, 'confidence': 0.8},
-        {'denomination': '50c', 'value_eur': 0.50, 'confidence': 0.8},
-    ]
-
-    summary = classifier.count_and_total(coins)
-
-    assert summary['denomination_counts']['1c'] == 2
-    assert summary['denomination_counts']['50c'] == 1
-    assert summary['total_coins'] == 3
-
-
-def test_avg_confidence(classifier):
-    coins = [
-        {'denomination': '10c', 'value_eur': 0.10, 'confidence': 0.6},
-        {'denomination': '20c', 'value_eur': 0.20, 'confidence': 0.8},
-    ]
-
-    summary = classifier.count_and_total(coins)
-
-    assert 0.6 <= summary['avg_confidence'] <= 0.8
-
-
-# ---------------- RUN PIPELINE TEST ----------------
-
-def test_full_pipeline(classifier):
+def test_full_run(classifier):
     fake_phase4 = {
         "features": [
-            make_features("COPPER", 0.018),
-            make_features("GOLD", 0.033),
-            make_features("BICOLOR", 0.050),
+            make_features(0.02), # Small coin
+            make_features(0.04), # Medium coin
+            make_features(0.04, sat_mean=5, hist_entropy=0.1, color_group='UNKNOWN'), # Noise
         ]
     }
-
     result = classifier.run(fake_phase4)
-
-    assert "classified_coins" in result
-    assert "summary" in result
-    assert len(result["classified_coins"]) == 3
-    assert result["summary"]["total_coins"] == 3
+    assert len(result['classified_coins']) == 3
+    assert result['summary']['total_count'] == 2
+    assert result['summary']['category_counts']['Small'] == 1
+    assert result['summary']['category_counts']['Medium'] == 1

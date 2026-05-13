@@ -1,0 +1,131 @@
+{
+  "run_id": "20260504_232707",
+  "source_image": "data/sample_images/Gemini_Generated_Image_slhfykslhfykslhf.png",
+  "timestamp": "2026-05-04T23:27:07.398638",
+  "summary": {
+    "total_count": 5,
+    "category_counts": {
+      "Small": 0,
+      "Medium": 0,
+      "Large": 5
+    },
+    "avg_confidence": 0.8,
+    "low_confidence_count": 0,
+    "rejected_count": 3
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.16,
+      "circle": {
+        "x": 585,
+        "y": 458,
+        "r": 316
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)",
+        "Size outlier detected"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 545,
+        "y": 181,
+        "r": 123
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 602,
+        "y": 861,
+        "r": 115
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 806,
+        "y": 616,
+        "r": 114
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 353,
+        "y": 885,
+        "r": 104
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 5,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 116,
+        "y": 467,
+        "r": 94
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 6,
+      "category": "Large",
+      "is_coin": false,
+      "confidence": 0.2,
+      "circle": {
+        "x": 169,
+        "y": 708,
+        "r": 91
+      },
+      "reasoning": [
+        "Rejected: Low saturation (looks like background)"
+      ]
+    },
+    {
+      "coin_index": 7,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 282,
+        "y": 299,
+        "r": 86
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    }
+  ]
+}

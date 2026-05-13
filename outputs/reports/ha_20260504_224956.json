@@ -1,0 +1,621 @@
+{
+  "run_id": "20260504_224956",
+  "source_image": "data/sample_images/ha.webp",
+  "timestamp": "2026-05-04T22:49:56.295986",
+  "summary": {
+    "total_count": 42,
+    "category_counts": {
+      "Small": 40,
+      "Medium": 1,
+      "Large": 1
+    },
+    "avg_confidence": 0.7961904761904761,
+    "low_confidence_count": 0,
+    "rejected_count": 1
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.64,
+      "circle": {
+        "x": 95,
+        "y": 146,
+        "r": 58
+      },
+      "reasoning": [
+        "Generic Large coin detected",
+        "Size outlier detected"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 622,
+        "y": 146,
+        "r": 30
+      },
+      "reasoning": [
+        "Generic Medium coin detected"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 192,
+        "y": 261,
+        "r": 25
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 305,
+        "y": 259,
+        "r": 25
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 249,
+        "y": 259,
+        "r": 24
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 5,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 357,
+        "y": 260,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 6,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 193,
+        "y": 204,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 7,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 301,
+        "y": 202,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 8,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 247,
+        "y": 203,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 9,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 247,
+        "y": 146,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 10,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 302,
+        "y": 145,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 11,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 193,
+        "y": 146,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 12,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 301,
+        "y": 88,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 13,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 192,
+        "y": 89,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 14,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 356,
+        "y": 88,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 15,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 192,
+        "y": 31,
+        "r": 21
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 16,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 356,
+        "y": 202,
+        "r": 20
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 17,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 356,
+        "y": 144,
+        "r": 20
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 18,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 246,
+        "y": 88,
+        "r": 20
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 19,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 245,
+        "y": 31,
+        "r": 20
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 20,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 354,
+        "y": 30,
+        "r": 20
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 21,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 300,
+        "y": 31,
+        "r": 20
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 22,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 546,
+        "y": 267,
+        "r": 19
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 23,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 437,
+        "y": 220,
+        "r": 19
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 24,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 438,
+        "y": 120,
+        "r": 19
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 25,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 436,
+        "y": 25,
+        "r": 19
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 26,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 546,
+        "y": 168,
+        "r": 18
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 27,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 437,
+        "y": 265,
+        "r": 15
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 28,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 546,
+        "y": 223,
+        "r": 15
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 29,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 547,
+        "y": 122,
+        "r": 15
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 30,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 437,
+        "y": 166,
+        "r": 14
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 31,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 508,
+        "y": 274,
+        "r": 13
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 32,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 475,
+        "y": 274,
+        "r": 13
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 33,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 508,
+        "y": 174,
+        "r": 13
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 34,
+      "category": "Small",
+      "is_coin": false,
+      "confidence": 0.3,
+      "circle": {
+        "x": 475,
+        "y": 173,
+        "r": 13
+      },
+      "reasoning": [
+        "Rejected: Extremely uniform color (not coin-like)"
+      ]
+    },
+    {
+      "coin_index": 35,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 507,
+        "y": 78,
+        "r": 13
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 36,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 473,
+        "y": 79,
+        "r": 13
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 37,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 544,
+        "y": 29,
+        "r": 13
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 38,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 509,
+        "y": 215,
+        "r": 12
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 39,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 475,
+        "y": 215,
+        "r": 12
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 40,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 437,
+        "y": 69,
+        "r": 12
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 41,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 474,
+        "y": 21,
+        "r": 12
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    },
+    {
+      "coin_index": 42,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 509,
+        "y": 115,
+        "r": 11
+      },
+      "reasoning": [
+        "Generic Small coin detected"
+      ]
+    }
+  ]
+}

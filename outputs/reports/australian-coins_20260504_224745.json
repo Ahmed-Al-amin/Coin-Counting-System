@@ -1,0 +1,102 @@
+{
+  "run_id": "20260504_224745",
+  "source_image": "data/sample_images/australian-coins.webp",
+  "timestamp": "2026-05-04T22:47:45.825481",
+  "summary": {
+    "total_count": 6,
+    "category_counts": {
+      "Small": 0,
+      "Medium": 0,
+      "Large": 6
+    },
+    "avg_confidence": 0.7999999999999999,
+    "low_confidence_count": 0,
+    "rejected_count": 0
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 153,
+        "y": 266,
+        "r": 84
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 462,
+        "y": 130,
+        "r": 73
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 320,
+        "y": 280,
+        "r": 65
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 284,
+        "y": 120,
+        "r": 61
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 472,
+        "y": 282,
+        "r": 53
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 5,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 145,
+        "y": 115,
+        "r": 50
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    }
+  ]
+}

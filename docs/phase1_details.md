@@ -101,44 +101,46 @@ class Preprocessor:
 
 **Why CLAHE?** Coins photographed under uneven lighting will have washed-out or dark regions. CLAHE ensures edges remain sharp even in bright/dark zones, improving CHT accuracy significantly.
 
-### Step 1.5 — Gaussian Blur (Noise Reduction)
+### Step 1.5 — Bilateral Filtering (Edge-Preserving Smoothing)
 
 ```python
-    def gaussian_blur(self, gray: np.ndarray) -> np.ndarray:
+    def bilateral_filter(self, gray: np.ndarray) -> np.ndarray:
         """
-        Smooth high-frequency noise before edge detection.
-        Kernel size must be odd. Larger kernels = more smoothing.
-        Typical: 5×5 for clean images, 9×9 for noisy ones.
+        Smooth internal textures while preserving sharp boundaries.
+        Bilateral filtering is nonlinear and edge-preserving, making it ideal
+        for coins where internal patterns should be flattened.
         """
-        kernel_size = self.config.get('blur_kernel', (5, 5))
-        sigma       = self.config.get('blur_sigma', 1.5)
-        return cv2.GaussianBlur(gray, kernel_size, sigma)
+        d = self.config.get('bilateral_d', 9)
+        sigma_color = self.config.get('bilateral_sigma_color', 75)
+        sigma_space = self.config.get('bilateral_sigma_space', 75)
+        return cv2.bilateralFilter(gray, d, sigma_color, sigma_space)
 ```
 
-**Trade-off**: Too little blur → CHT detects noise as circles. Too much blur → thin coin edges disappear. Kernel of (5,5) σ=1.5 is a robust starting point.
+**Why Bilateral?** Unlike Gaussian blur, bilateral filtering smooths pixels while respecting color/intensity gradients. This flattens the textured interior of the coin (designs, text) while keeping the outer circular boundary razor-sharp for detection.
 
-### Step 1.6 — Canny Edge Detection
+
+### Step 1.6 — Sobel Magnitude Edge Detection
 
 ```python
-    def canny_edges(self, blurred: np.ndarray) -> np.ndarray:
+    def sobel_magnitude(self, blurred: np.ndarray) -> np.ndarray:
         """
-        Detect edges using the Canny algorithm:
-        1. Compute gradient magnitude/direction (Sobel)
-        2. Non-maximum suppression (thin edges to 1px)
-        3. Double threshold + hysteresis (remove weak edges)
+        Detect edges using Sobel magnitude:
+        1. Compute gradient in X and Y directions
+        2. Combine into magnitude map
+        3. Normalize to 0-255 range
+        4. Apply softer binary threshold (30)
         
-        Auto-thresholding using Otsu's method for adaptability.
+        Provides stronger continuous edges for Hybrid detection.
         """
-        # Auto-compute thresholds from image statistics
-        otsu_thresh, _ = cv2.threshold(blurred, 0, 255,
-                                        cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-        low  = self.config.get('canny_low',  otsu_thresh * 0.5)
-        high = self.config.get('canny_high', otsu_thresh)
-        
-        return cv2.Canny(blurred, low, high)
+        sobelx = cv2.Sobel(blurred, cv2.CV_64F, 1, 0, ksize=3)
+        sobely = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
+        edges = cv2.magnitude(sobelx, sobely)
+        edges = cv2.normalize(edges, None, 0, 255, cv2.NORM_MINMAX)
+        _, edges_binary = cv2.threshold(edges, 30, 255, cv2.THRESH_BINARY)
+        return np.uint8(edges_binary)
 ```
 
-**Why auto-thresholds?** Manual thresholds fail under different lighting conditions. Otsu-derived thresholds adapt to each image's histogram.
+**Why Sobel?** Sobel magnitude provides a continuous gradient strength map, which is often more stable for detecting circular boundaries than the binary thresholded output of Canny.
 
 ### Step 1.7 — Scale Normalization (Optional)
 

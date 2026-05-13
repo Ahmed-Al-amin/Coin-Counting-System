@@ -1,0 +1,403 @@
+{
+  "run_id": "20260505_013649",
+  "source_image": "data/sample_images/old-19th-century-gold-coins-collection-vintage-engraved-illustration.webp",
+  "timestamp": "2026-05-05T01:36:49.504914",
+  "summary": {
+    "total_count": 22,
+    "total_detected": 22,
+    "breakdown": [
+      {
+        "category": "Small",
+        "count": 0
+      },
+      {
+        "category": "Medium",
+        "count": 1
+      },
+      {
+        "category": "Large",
+        "count": 21
+      }
+    ],
+    "category_counts": {
+      "Large": 21,
+      "Medium": 1
+    },
+    "avg_confidence": 0.6931818181818181,
+    "low_confidence_count": 0
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 361,
+        "y": 244,
+        "r": 199
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 239,
+        "y": 267,
+        "r": 186
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 413,
+        "y": 342,
+        "r": 166
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 321,
+        "y": 321,
+        "r": 146
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 141,
+        "y": 336,
+        "r": 116
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 5,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 96,
+        "y": 227,
+        "r": 106
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 6,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 550,
+        "y": 347,
+        "r": 85
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 7,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 246,
+        "y": 354,
+        "r": 84
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 8,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 328,
+        "y": 108,
+        "r": 79
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 9,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 497,
+        "y": 270,
+        "r": 77
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 10,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 510,
+        "y": 424,
+        "r": 74
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 11,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 90,
+        "y": 432,
+        "r": 63
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 12,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 228,
+        "y": 432,
+        "r": 62
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 13,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 87,
+        "y": 90,
+        "r": 60
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 14,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 365,
+        "y": 438,
+        "r": 60
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 15,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 186,
+        "y": 180,
+        "r": 51
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 16,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 420,
+        "y": 186,
+        "r": 50
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 17,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 534,
+        "y": 186,
+        "r": 50
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 18,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 303,
+        "y": 186,
+        "r": 49
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 19,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 423,
+        "y": 78,
+        "r": 47
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 20,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 534,
+        "y": 78,
+        "r": 47
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 21,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 211,
+        "y": 76,
+        "r": 44
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    }
+  ]
+}

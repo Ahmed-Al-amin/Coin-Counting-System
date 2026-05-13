@@ -20,12 +20,12 @@ preprocessing:
 # ----------------------------------------------------------------------------
 detection:
   dp: 1.2                        # Accumulator resolution ratio (1.0-2.0)
-  min_dist: 30                   # Minimum center-to-center distance (pixels)
-  param1: 80                     # Internal Canny high threshold
-  param2: 30                     # Accumulator threshold (lower = more circles)
+  min_dist: 80                   # Minimum center-to-center distance (pixels)
+  param1: 120                    # Internal Canny high threshold
+  param2: 60                     # Accumulator threshold (lower = more circles)
   min_radius: 15                 # Minimum coin radius (pixels)
   max_radius: 200                # Maximum coin radius (pixels)
-  nms_iou_threshold: 0.3         # Overlap threshold for non-maximum suppression
+  nms_iou_threshold: 0.6         # Overlap threshold for non-maximum suppression
   boundary_margin: 0.5           # Fraction of radius for boundary filtering
 
 # ----------------------------------------------------------------------------
@@ -49,16 +49,13 @@ features:
   hue_hist_bins: 18              # Number of bins for hue histogram
 
 # ----------------------------------------------------------------------------
-# Phase 5: Classification & Counting
+# Phase 5: Classification & Counting (Generic)
 # ----------------------------------------------------------------------------
 classification:
-  size_splits:
-    copper_1c_2c: 0.022          # rel_size threshold between 1c and 2c
-    copper_2c_5c: 0.032          # rel_size threshold between 2c and 5c
-    gold_10c_20c: 0.030          # rel_size threshold between 10c and 20c
-    gold_20c_50c: 0.038          # rel_size threshold between 20c and 50c
-    bicolor_1e_2e: 0.043         # rel_size threshold between €1 and €2
-  low_confidence_threshold: 0.50 # Flag coins below this confidence
+  size_thresholds:
+    small_medium: 0.035          # rel_size threshold between Small and Medium
+    medium_large: 0.055          # rel_size threshold between Medium and Large
+  low_confidence_threshold: 0.50 # Flag detections below this confidence
 
 # ----------------------------------------------------------------------------
 # Phase 6: Output & Visualization

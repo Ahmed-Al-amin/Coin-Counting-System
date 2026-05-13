@@ -1,0 +1,32 @@
+{
+  "run_id": "20260504_224359",
+  "source_image": "data/sample_images/touching_coins.jpg",
+  "timestamp": "2026-05-04T22:43:59.917774",
+  "summary": {
+    "total_count": 1,
+    "category_counts": {
+      "Small": 0,
+      "Medium": 0,
+      "Large": 1
+    },
+    "avg_confidence": 0.8,
+    "low_confidence_count": 0,
+    "rejected_count": 0
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 234,
+        "y": 249,
+        "r": 50
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    }
+  ]
+}

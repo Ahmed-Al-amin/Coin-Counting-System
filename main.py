@@ -103,7 +103,7 @@ def main():
         
         elapsed = time.time() - start_time
         logger.success(f"Pipeline complete in {elapsed:.2f}s")
-        logger.info(f"Total value: €{phase5_result['summary']['total_eur']:.2f}")
+        logger.info(f"Total coins detected: {phase5_result['summary']['total_count']}")
         logger.info(f"Outputs saved to: {args.output_dir}/")
         
     except Exception as e:

@@ -1,0 +1,2969 @@
+{
+  "run_id": "20260505_005202",
+  "source_image": "data/sample_images/Gemini_Generated_Image_slhfykslhfykslhf.png",
+  "timestamp": "2026-05-05T00:52:02.379363",
+  "summary": {
+    "total_count": 173,
+    "total_detected": 174,
+    "breakdown": [
+      {
+        "category": "Small",
+        "count": 103
+      },
+      {
+        "category": "Medium",
+        "count": 31
+      },
+      {
+        "category": "Large",
+        "count": 39
+      }
+    ],
+    "category_counts": {
+      "Large": 39,
+      "Medium": 31,
+      "Small": 103
+    },
+    "avg_confidence": 0.6722543352601157,
+    "low_confidence_count": 1
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 299,
+        "y": 517,
+        "r": 199
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 690,
+        "y": 606,
+        "r": 199
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 473,
+        "y": 346,
+        "r": 199
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 539,
+        "y": 721,
+        "r": 199
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 330,
+        "y": 708,
+        "r": 199
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 5,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 318,
+        "y": 187,
+        "r": 199
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 6,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 801,
+        "y": 827,
+        "r": 198
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 7,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 853,
+        "y": 210,
+        "r": 198
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 8,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 480,
+        "y": 531,
+        "r": 180
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 9,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 257,
+        "y": 888,
+        "r": 180
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 10,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 198,
+        "y": 375,
+        "r": 149
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 11,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 681,
+        "y": 747,
+        "r": 143
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 12,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 73,
+        "y": 766,
+        "r": 138
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 13,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 641,
+        "y": 475,
+        "r": 130
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 14,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 743,
+        "y": 348,
+        "r": 122
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 15,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 349,
+        "y": 390,
+        "r": 122
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 16,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 544,
+        "y": 178,
+        "r": 118
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 17,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 765,
+        "y": 492,
+        "r": 117
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 18,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 595,
+        "y": 291,
+        "r": 117
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 19,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 665,
+        "y": 210,
+        "r": 114
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 20,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 135,
+        "y": 563,
+        "r": 112
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 21,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 521,
+        "y": 922,
+        "r": 112
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 22,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 193,
+        "y": 201,
+        "r": 109
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 23,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 805,
+        "y": 617,
+        "r": 108
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 24,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 603,
+        "y": 859,
+        "r": 104
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 25,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 258,
+        "y": 703,
+        "r": 104
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 26,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 755,
+        "y": 168,
+        "r": 102
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 27,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 391,
+        "y": 567,
+        "r": 99
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 28,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 69,
+        "y": 353,
+        "r": 99
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 29,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 837,
+        "y": 737,
+        "r": 97
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 30,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 348,
+        "y": 886,
+        "r": 94
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 31,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 729,
+        "y": 910,
+        "r": 94
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 32,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 264,
+        "y": 851,
+        "r": 92
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 33,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 168,
+        "y": 707,
+        "r": 89
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 34,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 411,
+        "y": 463,
+        "r": 88
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 35,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 523,
+        "y": 445,
+        "r": 88
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 36,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 576,
+        "y": 545,
+        "r": 87
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 37,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 281,
+        "y": 301,
+        "r": 81
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 38,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 838,
+        "y": 449,
+        "r": 81
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 39,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 472,
+        "y": 645,
+        "r": 76
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 40,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 867,
+        "y": 259,
+        "r": 73
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 41,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 292,
+        "y": 208,
+        "r": 72
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 42,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 109,
+        "y": 489,
+        "r": 71
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 43,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 285,
+        "y": 377,
+        "r": 69
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 44,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 864,
+        "y": 334,
+        "r": 69
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 45,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 685,
+        "y": 373,
+        "r": 68
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 46,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 702,
+        "y": 462,
+        "r": 66
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 47,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 657,
+        "y": 273,
+        "r": 65
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 48,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 544,
+        "y": 639,
+        "r": 63
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 49,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 490,
+        "y": 193,
+        "r": 63
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 50,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 636,
+        "y": 405,
+        "r": 62
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 51,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 509,
+        "y": 131,
+        "r": 61
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 52,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 588,
+        "y": 478,
+        "r": 60
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 53,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 96,
+        "y": 792,
+        "r": 60
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 54,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 804,
+        "y": 563,
+        "r": 59
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 55,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 599,
+        "y": 204,
+        "r": 58
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 56,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 403,
+        "y": 646,
+        "r": 58
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 57,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 119,
+        "y": 431,
+        "r": 56
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 58,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 779,
+        "y": 294,
+        "r": 56
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 59,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 811,
+        "y": 363,
+        "r": 56
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 60,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 569,
+        "y": 118,
+        "r": 55
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 61,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 648,
+        "y": 891,
+        "r": 54
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 62,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 82,
+        "y": 715,
+        "r": 52
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 63,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 507,
+        "y": 592,
+        "r": 51
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 64,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 863,
+        "y": 611,
+        "r": 51
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 65,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 565,
+        "y": 810,
+        "r": 51
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 66,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 911,
+        "y": 625,
+        "r": 51
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 67,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 628,
+        "y": 109,
+        "r": 51
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 68,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 653,
+        "y": 839,
+        "r": 50
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 69,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 640,
+        "y": 987,
+        "r": 50
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 70,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 855,
+        "y": 657,
+        "r": 49
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 71,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 441,
+        "y": 406,
+        "r": 48
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 72,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 796,
+        "y": 683,
+        "r": 48
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 73,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 528,
+        "y": 252,
+        "r": 48
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 74,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 385,
+        "y": 967,
+        "r": 48
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 75,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 532,
+        "y": 478,
+        "r": 44
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 76,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 409,
+        "y": 876,
+        "r": 43
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 77,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 537,
+        "y": 875,
+        "r": 43
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 78,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 567,
+        "y": 957,
+        "r": 43
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 79,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 741,
+        "y": 611,
+        "r": 42
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 80,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 327,
+        "y": 297,
+        "r": 42
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 81,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 487,
+        "y": 393,
+        "r": 40
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 82,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 375,
+        "y": 424,
+        "r": 40
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 83,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 335,
+        "y": 826,
+        "r": 40
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 84,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 851,
+        "y": 294,
+        "r": 40
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 85,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 724,
+        "y": 879,
+        "r": 40
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 86,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 471,
+        "y": 563,
+        "r": 39
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 87,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 142,
+        "y": 667,
+        "r": 39
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 88,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 534,
+        "y": 838,
+        "r": 39
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 89,
+      "category": "Small",
+      "is_coin": false,
+      "confidence": 0.25,
+      "color_group": "UNKNOWN",
+      "circle": {
+        "x": 325,
+        "y": 915,
+        "r": 38
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Color group unknown"
+      ]
+    },
+    {
+      "coin_index": 90,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 480,
+        "y": 427,
+        "r": 38
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 91,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 213,
+        "y": 681,
+        "r": 38
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 92,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 378,
+        "y": 827,
+        "r": 38
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 93,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 225,
+        "y": 341,
+        "r": 38
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 94,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 351,
+        "y": 247,
+        "r": 38
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 95,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 759,
+        "y": 226,
+        "r": 37
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 96,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 869,
+        "y": 725,
+        "r": 37
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 97,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 551,
+        "y": 916,
+        "r": 36
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 98,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 741,
+        "y": 576,
+        "r": 36
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 99,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 286,
+        "y": 876,
+        "r": 36
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 100,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 115,
+        "y": 525,
+        "r": 35
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 101,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 108,
+        "y": 658,
+        "r": 35
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 102,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 491,
+        "y": 84,
+        "r": 35
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 103,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 525,
+        "y": 96,
+        "r": 35
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 104,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 171,
+        "y": 481,
+        "r": 34
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 105,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 450,
+        "y": 678,
+        "r": 34
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 106,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 316,
+        "y": 973,
+        "r": 34
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 107,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 712,
+        "y": 828,
+        "r": 34
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 108,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 520,
+        "y": 383,
+        "r": 33
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 109,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 459,
+        "y": 378,
+        "r": 33
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 110,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 660,
+        "y": 318,
+        "r": 33
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 111,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 475,
+        "y": 126,
+        "r": 33
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 112,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 292,
+        "y": 942,
+        "r": 33
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 113,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 910,
+        "y": 564,
+        "r": 33
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 114,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 291,
+        "y": 911,
+        "r": 32
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 115,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 814,
+        "y": 415,
+        "r": 31
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 116,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 735,
+        "y": 648,
+        "r": 31
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 117,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 201,
+        "y": 754,
+        "r": 31
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 118,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 557,
+        "y": 90,
+        "r": 31
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 119,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 243,
+        "y": 677,
+        "r": 31
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 120,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 489,
+        "y": 713,
+        "r": 31
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 121,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 757,
+        "y": 447,
+        "r": 30
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 122,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 227,
+        "y": 708,
+        "r": 30
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 123,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 145,
+        "y": 522,
+        "r": 29
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 124,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 287,
+        "y": 346,
+        "r": 29
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 125,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 114,
+        "y": 735,
+        "r": 29
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 126,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 407,
+        "y": 841,
+        "r": 29
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 127,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 598,
+        "y": 105,
+        "r": 29
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 128,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 378,
+        "y": 663,
+        "r": 29
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 129,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 201,
+        "y": 285,
+        "r": 28
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 130,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 420,
+        "y": 946,
+        "r": 28
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 131,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 787,
+        "y": 433,
+        "r": 27
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 132,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 318,
+        "y": 251,
+        "r": 27
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 133,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 661,
+        "y": 918,
+        "r": 27
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 134,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 550,
+        "y": 529,
+        "r": 27
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 135,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 226,
+        "y": 311,
+        "r": 27
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 136,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 85,
+        "y": 527,
+        "r": 27
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 137,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 655,
+        "y": 381,
+        "r": 27
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 138,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 355,
+        "y": 960,
+        "r": 27
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 139,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 611,
+        "y": 940,
+        "r": 27
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 140,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 59,
+        "y": 447,
+        "r": 26
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 141,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 174,
+        "y": 431,
+        "r": 26
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 142,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 725,
+        "y": 399,
+        "r": 26
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 143,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 627,
+        "y": 221,
+        "r": 26
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 144,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 107,
+        "y": 400,
+        "r": 25
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 145,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 139,
+        "y": 765,
+        "r": 25
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 146,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 892,
+        "y": 593,
+        "r": 25
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 147,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 168,
+        "y": 642,
+        "r": 24
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 148,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 47,
+        "y": 477,
+        "r": 24
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 149,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 231,
+        "y": 267,
+        "r": 23
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 150,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 198,
+        "y": 648,
+        "r": 23
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 151,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.5,
+      "color_group": "GOLD",
+      "circle": {
+        "x": 419,
+        "y": 912,
+        "r": 23
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Surface too uniform (likely noise)",
+        "Matches GOLD group"
+      ]
+    },
+    {
+      "coin_index": 152,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 829,
+        "y": 268,
+        "r": 23
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 153,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 682,
+        "y": 895,
+        "r": 23
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 154,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 55,
+        "y": 537,
+        "r": 23
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 155,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 903,
+        "y": 665,
+        "r": 23
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 156,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 641,
+        "y": 946,
+        "r": 22
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 157,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 520,
+        "y": 695,
+        "r": 22
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 158,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 781,
+        "y": 711,
+        "r": 22
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 159,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 544,
+        "y": 789,
+        "r": 21
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 160,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 101,
+        "y": 688,
+        "r": 21
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 161,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 681,
+        "y": 826,
+        "r": 20
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 162,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 814,
+        "y": 708,
+        "r": 20
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 163,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 707,
+        "y": 669,
+        "r": 20
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 164,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 875,
+        "y": 679,
+        "r": 19
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 165,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 831,
+        "y": 523,
+        "r": 19
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 166,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 286,
+        "y": 241,
+        "r": 18
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 167,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 801,
+        "y": 253,
+        "r": 18
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 168,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 634,
+        "y": 864,
+        "r": 17
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 169,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 178,
+        "y": 784,
+        "r": 16
+      },
+      "reasoning": [
+        "High-luminance silver candidate",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 170,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "SILVER",
+      "circle": {
+        "x": 557,
+        "y": 678,
+        "r": 16
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches SILVER group"
+      ]
+    },
+    {
+      "coin_index": 171,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.7,
+      "color_group": "COPPER",
+      "circle": {
+        "x": 175,
+        "y": 511,
+        "r": 16
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Matches COPPER group"
+      ]
+    },
+    {
+      "coin_index": 172,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 862,
+        "y": 537,
+        "r": 15
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 173,
+      "category": "Small",
+      "is_coin": true,
+      "confidence": 0.65,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 346,
+        "y": 649,
+        "r": 15
+      },
+      "reasoning": [
+        "Low saturation/contrast",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    }
+  ]
+}

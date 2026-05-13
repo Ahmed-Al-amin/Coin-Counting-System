@@ -34,31 +34,33 @@ class Preprocessor:
         clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=tile_grid_size)
         return clahe.apply(gray)
 
-    def gaussian_blur(self, gray: np.ndarray) -> np.ndarray:
+    def bilateral_filter(self, gray: np.ndarray) -> np.ndarray:
         """
-        Smooth high-frequency noise before edge detection.
-        Kernel size must be odd. Larger kernels = more smoothing.
-        Typical: 5×5 for clean images, 9×9 for noisy ones.
+        Smooth internal textures while preserving sharp boundaries.
+        Bilateral filtering is nonlinear and edge-preserving, making it ideal
+        for coins where internal patterns should be flattened.
         """
-        kernel_size = tuple(self.config.get('blur_kernel', [5, 5]))
-        sigma = self.config.get('blur_sigma', 1.5)
-        return cv2.GaussianBlur(gray, kernel_size, sigma)
+        d = self.config.get('bilateral_d', 9)
+        sigma_color = self.config.get('bilateral_sigma_color', 75)
+        sigma_space = self.config.get('bilateral_sigma_space', 75)
+        return cv2.bilateralFilter(gray, d, sigma_color, sigma_space)
 
-    def canny_edges(self, blurred: np.ndarray) -> np.ndarray:
+    def sobel_magnitude(self, blurred: np.ndarray) -> np.ndarray:
         """
-        Detect edges using the Canny algorithm.
-        Auto-thresholding using Otsu's method for adaptability.
+        Detect edges using Sobel magnitude. 
+        Includes normalization and softer thresholding for hybrid detection.
         """
-        # Auto-compute thresholds from image statistics
-        otsu_thresh, _ = cv2.threshold(blurred, 0, 255,
-                                        cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-        low_ratio = self.config.get('canny_low_ratio', 0.5)
-        high_ratio = self.config.get('canny_high_ratio', 1.0)
+        sobelx = cv2.Sobel(blurred, cv2.CV_64F, 1, 0, ksize=3)
+        sobely = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
+        edges = cv2.magnitude(sobelx, sobely)
         
-        low = otsu_thresh * low_ratio
-        high = otsu_thresh * high_ratio
+        # Normalize to 0-255 range
+        edges = cv2.normalize(edges, None, 0, 255, cv2.NORM_MINMAX)
+        edges = np.uint8(edges)
         
-        return cv2.Canny(blurred, int(low), int(high))
+        # Apply softer binary threshold
+        _, edges_binary = cv2.threshold(edges, 30, 255, cv2.THRESH_BINARY)
+        return edges_binary
 
     def normalize_scale(self, image: np.ndarray) -> np.ndarray:
         """
@@ -80,8 +82,8 @@ class Preprocessor:
         scaled = self.normalize_scale(original)
         gray = self.to_grayscale(scaled)
         clahe = self.apply_clahe(gray)
-        blurred = self.gaussian_blur(clahe)
-        edges = self.canny_edges(blurred)
+        blurred = self.bilateral_filter(clahe)
+        edges = self.sobel_magnitude(blurred)
         
         if self.debug:
             save_image(gray, f"{self.output_dir}/gray.png")

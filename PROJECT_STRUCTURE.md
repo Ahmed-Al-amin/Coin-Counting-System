@@ -12,12 +12,12 @@ coin_counter/
 │
 ├── src/                            # Core source modules (one per phase)
 │   ├── __init__.py                 # Package marker; exports phase classes
-│   ├── phase1_preprocessing.py     # Image loading, grayscale, CLAHE, blur, Canny
-│   ├── phase2_detection.py         # Circular Hough Transform, NMS, circle filtering
-│   ├── phase3_segmentation.py      # ROI extraction, circular masking, normalization
-│   ├── phase4_features.py          # Size ratio, HSV/LAB stats, histogram, dominant color
-│   ├── phase5_classification.py    # Rule-based classifier, confidence, counting, totaling
-│   ├── phase6_output.py            # Annotated image, JSON export, HTML report, table
+│   ├── preprocessing.py            # Image loading, grayscale, CLAHE, bilateral, Sobel
+│   ├── detection.py                # CHT, Shape Closing, Hybrid contour analysis, Clustering
+│   ├── segmentation.py             # ROI extraction, circular masking, normalization
+│   ├── features.py                 # Size ratio, HSV/LAB stats, histogram, dominant color
+│   ├── classification.py           # Generic validator, size-based categorization, counting
+│   ├── output.py                   # Annotated image, JSON export, HTML report, table (count-based)
 │   └── utils/
 │       ├── __init__.py
 │       ├── image_io.py             # load_image(), save_image(), validate_path()

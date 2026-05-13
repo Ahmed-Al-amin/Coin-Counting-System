@@ -2,172 +2,120 @@ import numpy as np
 from typing import List, Dict, Tuple
 
 
-EURO_COINS = {
-    '1c':  {'value_eur': 0.01, 'diameter_mm': 16.25, 'color_group': 'COPPER'},
-    '2c':  {'value_eur': 0.02, 'diameter_mm': 18.75, 'color_group': 'COPPER'},
-    '5c':  {'value_eur': 0.05, 'diameter_mm': 21.25, 'color_group': 'COPPER'},
-    '10c': {'value_eur': 0.10, 'diameter_mm': 19.75, 'color_group': 'GOLD'},
-    '20c': {'value_eur': 0.20, 'diameter_mm': 22.25, 'color_group': 'GOLD'},
-    '50c': {'value_eur': 0.50, 'diameter_mm': 24.25, 'color_group': 'GOLD'},
-    '1e':  {'value_eur': 1.00, 'diameter_mm': 23.25, 'color_group': 'BICOLOR'},
-    '2e':  {'value_eur': 2.00, 'diameter_mm': 25.75, 'color_group': 'BICOLOR'},
-}
-
-
 class CoinClassifier:
     def __init__(self, config: dict):
         self.config = config
 
-        self.size_splits = config.get('size_splits', {
-            'copper_1c_2c':  0.022,
-            'copper_2c_5c':  0.032,
-            'gold_10c_20c':  0.030,
-            'gold_20c_50c':  0.038,
-            'bicolor_1e_2e': 0.043,
+        # Generic size thresholds for categorization
+        self.size_thresholds = config.get('size_thresholds', {
+            'small_medium': 0.035,
+            'medium_large': 0.055,
         })
+        self.low_confidence_threshold = config.get('low_confidence_threshold', 0.50)
 
     # ---------------- MAIN CLASSIFIER ----------------
     def classify_coin(self, features: Dict) -> Dict:
-        color_group = features.get('color_group', 'UNKNOWN')
+        """
+        Categorize a detected circle by size and validate if it's likely a coin.
+        """
         rel_size = features.get('rel_size', 0.0)
-        size_bin = features.get('size_bin', 'medium')
-
-        denomination = 'UNKNOWN'
-        confidence = 0.0
-        reasoning = []
-
-        if color_group == 'COPPER':
-            denomination, confidence, reasoning = self._classify_copper(rel_size, size_bin, features)
-
-        elif color_group == 'GOLD':
-            denomination, confidence, reasoning = self._classify_gold(rel_size, size_bin, features)
-
-        elif color_group == 'BICOLOR':
-            denomination, confidence, reasoning = self._classify_bicolor(rel_size, size_bin, features)
-
-        elif color_group == 'SILVER':
-            denomination, confidence = 'UNKNOWN', 0.2
-            reasoning = ['Silver not standard Euro coin']
-
+        
+        # Categorize by size
+        if rel_size < self.size_thresholds['small_medium']:
+            category = 'Small'
+        elif rel_size < self.size_thresholds['medium_large']:
+            category = 'Medium'
         else:
-            denomination, confidence = 'UNKNOWN', 0.1
-            reasoning = ['Unknown color group']
+            category = 'Large'
 
-        value_eur = EURO_COINS.get(denomination, {}).get('value_eur', 0.0)
+        # Validation Logic: Check if it's actually a coin based on features
+        is_coin, confidence, reasoning = self._validate_coin(features)
 
         return {
             'coin_index': features['coin_index'],
             'circle': features['circle'],
-            'denomination': denomination,
-            'value_eur': value_eur,
+            'category': category,
+            'is_coin': is_coin,
             'confidence': confidence,
-            'color_group': color_group,
+            'color_group': features.get('color_group', 'UNKNOWN'),
             'reasoning': reasoning,
         }
 
-    # ---------------- COPPER ----------------
-    def _classify_copper(self, rel_size: float, size_bin: str, features: Dict) -> Tuple:
-        reasoning = ['COPPER group']
+    def _validate_coin(self, features: Dict) -> Tuple[bool, float, List[str]]:
+        """
+        Determine if a detected circle is a coin or noise/background.
+        Uses saturation, entropy, and color group to score confidence.
+        """
+        reasoning = []
+        confidence = 0.5  # Base confidence
+        
+        sat_mean = features.get('sat_mean', 0)
+        hue_entropy = features.get('hist_entropy', 0)
+        color_group = features.get('color_group', 'UNKNOWN')
 
-        if rel_size < self.size_splits['copper_1c_2c']:
-            den, conf = '1c', 0.75
-        elif rel_size < self.size_splits['copper_2c_5c']:
-            den, conf = '2c', 0.75
+        # Heuristic 1: Coins usually have some saturation unless silver/worn
+        if sat_mean > 40:
+            confidence += 0.1
+            reasoning.append("Good color saturation")
+        elif color_group == 'SILVER' and features.get('lab_L_mean', 0) > 150:
+            confidence += 0.1
+            reasoning.append("High-luminance silver candidate")
         else:
-            den, conf = '5c', 0.80
+            confidence -= 0.1
+            reasoning.append("Low saturation/contrast")
 
-        if features.get('sat_mean', 0) > 100:
-            conf = min(1.0, conf + 0.1)
+        # Heuristic 2: Coins have surface texture (entropy)
+        if 1.0 < hue_entropy < 4.0:
+            confidence += 0.15
+            reasoning.append("Typical coin surface texture")
+        elif hue_entropy < 0.5:
+            confidence -= 0.2
+            reasoning.append("Surface too uniform (likely noise)")
 
-        return den, conf, reasoning
-
-    # ---------------- GOLD ----------------
-    def _classify_gold(self, rel_size: float, size_bin: str, features: Dict) -> Tuple:
-        reasoning = ['GOLD group']
-
-        if rel_size < self.size_splits['gold_10c_20c']:
-            den, conf = '10c', 0.75
-        elif rel_size < self.size_splits['gold_20c_50c']:
-            den, conf = '20c', 0.70
+        # Heuristic 3: Known color groups
+        if color_group != 'UNKNOWN':
+            confidence += 0.1
+            reasoning.append(f"Matches {color_group} group")
         else:
-            den, conf = '50c', 0.75
+            confidence -= 0.15
+            reasoning.append("Color group unknown")
 
-        if features.get('lab_b_mean', 128) > 148:
-            conf = min(1.0, conf + 0.08)
+        # Clamp confidence
+        confidence = float(np.clip(confidence, 0.0, 1.0))
+        is_coin = confidence >= self.low_confidence_threshold
 
-        return den, conf, reasoning
+        return is_coin, confidence, reasoning
 
-    # ---------------- BICOLOR ----------------
-    def _classify_bicolor(self, rel_size: float, size_bin: str, features: Dict) -> Tuple:
-        reasoning = ['BICOLOR group']
-
-        if rel_size < self.size_splits['bicolor_1e_2e']:
-            den, conf = '1e', 0.72
-        else:
-            den, conf = '2e', 0.72
-
-        return den, min(conf, 0.80), reasoning
-
-    # ---------------- CONFIDENCE CALIBRATION ----------------
-    def calibrate_confidence(self, result: Dict, all_results: List[Dict]) -> Dict:
-        r = result.copy()
-
-        if r['denomination'] == 'UNKNOWN':
-            return r
-
-        max_radius = max(c['circle'][2] for c in all_results)
-        actual_rel = r['circle'][2] / max_radius
-
-        expected_rel = EURO_COINS[r['denomination']]['diameter_mm'] / 25.75
-
-        diff = abs(expected_rel - actual_rel) / expected_rel
-
-        if diff > 0.25:
-            r['confidence'] *= 0.75
-            r['reasoning'].append('Size inconsistency detected')
-
-        return r
-
-    # ---------------- TOTAL ----------------
-    def count_and_total(self, coins: List[Dict]) -> Dict:
-        denomination_counts = {}
-        denomination_values = {}
-
-        total_cents = 0
-
-        for coin in coins:
-            den = coin['denomination']
-            val = coin['value_eur']
-
-            denomination_counts[den] = denomination_counts.get(den, 0) + 1
-            denomination_values[den] = val
-
-            total_cents += round(val * 100)
-
-        total_eur = total_cents / 100.0
+    # ---------------- SUMMARY ----------------
+    def summarize_results(self, coins: List[Dict]) -> Dict:
+        """
+        Generate a summary focusing on total counts and size breakdown.
+        """
+        valid_coins = [c for c in coins if c['is_coin']]
+        
+        category_counts = {}
+        for coin in valid_coins:
+            cat = coin['category']
+            category_counts[cat] = category_counts.get(cat, 0) + 1
 
         breakdown = []
-        for den in sorted(denomination_values.keys(), key=lambda d: denomination_values[d]):
-            count = denomination_counts[den]
-            unit = denomination_values[den]
-
+        for cat in ['Small', 'Medium', 'Large']:
+            count = category_counts.get(cat, 0)
             breakdown.append({
-                'denomination': den,
-                'count': count,
-                'unit_value': unit,
-                'subtotal_eur': round(count * unit, 2)
+                'category': cat,
+                'count': count
             })
 
-        confidences = [c['confidence'] for c in coins if c['denomination'] != 'UNKNOWN']
+        confidences = [c['confidence'] for c in valid_coins]
         avg_conf = float(np.mean(confidences)) if confidences else 0.0
 
         return {
-            'total_eur': total_eur,
-            'total_coins': len(coins),
+            'total_count': len(valid_coins),
+            'total_detected': len(coins),
             'breakdown': breakdown,
-            'denomination_counts': denomination_counts,
+            'category_counts': category_counts,
             'avg_confidence': avg_conf,
-            'low_confidence_count': sum(1 for c in coins if c['confidence'] < 0.5),
+            'low_confidence_count': sum(1 for c in coins if c['confidence'] < self.low_confidence_threshold),
         }
 
     # ---------------- RUN ----------------
@@ -175,12 +123,9 @@ class CoinClassifier:
         features_list = phase4_result['features']
 
         classified = [self.classify_coin(f) for f in features_list]
-
-        calibrated = [self.calibrate_confidence(c, classified) for c in classified]
-
-        summary = self.count_and_total(calibrated)
+        summary = self.summarize_results(classified)
 
         return {
-            'classified_coins': calibrated,
+            'classified_coins': classified,
             'summary': summary
         }

@@ -1,0 +1,115 @@
+{
+  "run_id": "20260505_045210",
+  "source_image": "data/sample_images/Pasted image2.png",
+  "timestamp": "2026-05-05T04:52:10.878976",
+  "summary": {
+    "total_count": 5,
+    "total_detected": 5,
+    "breakdown": [
+      {
+        "category": "Small",
+        "count": 0
+      },
+      {
+        "category": "Medium",
+        "count": 0
+      },
+      {
+        "category": "Large",
+        "count": 5
+      }
+    ],
+    "category_counts": {
+      "Large": 5
+    },
+    "avg_confidence": 0.85,
+    "low_confidence_count": 0
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 149,
+        "y": 160,
+        "r": 134
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 81,
+        "y": 105,
+        "r": 80
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 214,
+        "y": 94,
+        "r": 75
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 201,
+        "y": 226,
+        "r": 69
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.85,
+      "color_group": "BICOLOR",
+      "circle": {
+        "x": 150,
+        "y": 41,
+        "r": 58
+      },
+      "reasoning": [
+        "Good color saturation",
+        "Typical coin surface texture",
+        "Matches BICOLOR group"
+      ]
+    }
+  ]
+}

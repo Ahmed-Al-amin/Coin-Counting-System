@@ -1,0 +1,284 @@
+{
+  "run_id": "20260504_231344",
+  "source_image": "data/sample_images/old-19th-century-gold-coins-collection-vintage-engraved-illustration.webp",
+  "timestamp": "2026-05-04T23:13:44.096528",
+  "summary": {
+    "total_count": 19,
+    "category_counts": {
+      "Small": 0,
+      "Medium": 4,
+      "Large": 15
+    },
+    "avg_confidence": 0.8000000000000002,
+    "low_confidence_count": 0,
+    "rejected_count": 0
+  },
+  "coins": [
+    {
+      "coin_index": 0,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 510,
+        "y": 422,
+        "r": 75
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 1,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 90,
+        "y": 433,
+        "r": 64
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 2,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 229,
+        "y": 433,
+        "r": 63
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 3,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 87,
+        "y": 89,
+        "r": 62
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 4,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 365,
+        "y": 437,
+        "r": 61
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 5,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 200,
+        "y": 303,
+        "r": 55
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 6,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 187,
+        "y": 182,
+        "r": 52
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 7,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 534,
+        "y": 187,
+        "r": 51
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 8,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 421,
+        "y": 187,
+        "r": 51
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 9,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 76,
+        "y": 208,
+        "r": 50
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 10,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 302,
+        "y": 185,
+        "r": 50
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 11,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 536,
+        "y": 77,
+        "r": 48
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 12,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 424,
+        "y": 77,
+        "r": 48
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 13,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 73,
+        "y": 313,
+        "r": 46
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 14,
+      "category": "Large",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 211,
+        "y": 74,
+        "r": 45
+      },
+      "reasoning": [
+        "Generic Large coin detected"
+      ]
+    },
+    {
+      "coin_index": 15,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 313,
+        "y": 72,
+        "r": 44
+      },
+      "reasoning": [
+        "Generic Medium coin detected"
+      ]
+    },
+    {
+      "coin_index": 16,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 541,
+        "y": 294,
+        "r": 42
+      },
+      "reasoning": [
+        "Generic Medium coin detected"
+      ]
+    },
+    {
+      "coin_index": 17,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 454,
+        "y": 293,
+        "r": 42
+      },
+      "reasoning": [
+        "Generic Medium coin detected"
+      ]
+    },
+    {
+      "coin_index": 18,
+      "category": "Medium",
+      "is_coin": true,
+      "confidence": 0.8,
+      "circle": {
+        "x": 333,
+        "y": 315,
+        "r": 33
+      },
+      "reasoning": [
+        "Generic Medium coin detected"
+      ]
+    }
+  ]
+}
