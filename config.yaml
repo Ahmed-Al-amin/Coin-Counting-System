@@ -53,6 +53,5 @@ classification:
 # ----------------------------------------------------------------------------
 output:
   output_dir: outputs
-  generate_html: true            # Generate HTML report
   annotate_confidence_bar: true  # Draw confidence bars under coins
   banner_height_px: 60           # Height of summary banner
