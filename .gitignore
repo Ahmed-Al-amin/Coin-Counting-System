@@ -145,3 +145,5 @@ outputs/intermediate/
 outputs/logs/
 outputs/annotated/
 data/sample_images/
+*.html
+*.json
